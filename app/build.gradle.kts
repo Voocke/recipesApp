@@ -6,6 +6,8 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     alias(libs.plugins.androidx.room)
+    alias(libs.plugins.dagger.hilt)
+
 }
 
 android {
@@ -40,6 +42,7 @@ android {
     kotlin {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
+            freeCompilerArgs.add("-Xjdk-release=11")
         }
     }
     buildFeatures {
@@ -69,4 +72,7 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.sqlite.bundled)
     ksp(libs.androidx.room.compiler)
+    implementation(libs.daggerhilt.android)
+    ksp(libs.daggerhilt.compiler)
+    implementation(libs.daggerhilt.navigation.compose)
 }
