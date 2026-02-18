@@ -12,14 +12,12 @@ plugins {
 
 android {
     namespace = "com.example.recipes"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.recipes"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -42,7 +40,6 @@ android {
     kotlin {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
-            freeCompilerArgs.add("-Xjdk-release=11")
         }
     }
     buildFeatures {
@@ -75,4 +72,5 @@ dependencies {
     implementation(libs.daggerhilt.android)
     ksp(libs.daggerhilt.compiler)
     implementation(libs.daggerhilt.navigation.compose)
+    implementation(libs.androidx.room.ktx)
 }
