@@ -1,6 +1,7 @@
 package com.example.recipes.data.local.dao
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.example.recipes.data.local.entities.RecipeTagCross
@@ -17,5 +18,14 @@ interface TagDao {
 
     @Insert
     suspend fun insertRecipeTag(crossRef: RecipeTagCross)
+
+
+    @Delete
+    suspend fun deleteTag(vararg tag: Tag)
+
+    @Delete
+    suspend fun deleteRecipeTag(crossRef: RecipeTagCross)
+
+
 
 }
