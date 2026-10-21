@@ -2,26 +2,136 @@ package com.example.recipes.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.recipes.R
 
-// Set of Material typography styles to start with
+val HandwrittenFamily = FontFamily(
+    Font(R.font.caveat_regular, FontWeight.Normal),
+    Font(R.font.caveat_bold, FontWeight.Bold)
+)
+
+// Dedicated craft handwritten styles for notes, badges, stickers
+val ScriptLabel = TextStyle(
+    fontFamily = HandwrittenFamily,
+    fontWeight = FontWeight.Bold,
+    fontSize = 18.sp,
+    lineHeight = 22.sp,
+    letterSpacing = 0.sp
+)
+
+val ScriptTitle = TextStyle(
+    fontFamily = HandwrittenFamily,
+    fontWeight = FontWeight.Bold,
+    fontSize = 24.sp,
+    lineHeight = 28.sp,
+    letterSpacing = 0.sp
+)
+
+val ScriptBody = TextStyle(
+    fontFamily = HandwrittenFamily,
+    fontWeight = FontWeight.Normal,
+    fontSize = 20.sp,
+    lineHeight = 26.sp,
+    letterSpacing = 0.sp
+)
+
+val HeadlineLarge = TextStyle(
+    fontFamily = HandwrittenFamily,
+    fontWeight = FontWeight.Bold,
+    fontSize = 32.sp,
+    lineHeight = 36.sp
+)
+
+val TitleMedium = TextStyle(
+    fontFamily = HandwrittenFamily,
+    fontWeight = FontWeight.Bold,
+    fontSize = 20.sp,
+    lineHeight = 24.sp
+)
+
+// Set of Material typography styles integrated with Craft aesthetic
 val Typography = Typography(
+    displayLarge = TextStyle(
+        fontFamily = HandwrittenFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 44.sp,
+        lineHeight = 50.sp
+    ),
+    displayMedium = TextStyle(
+        fontFamily = HandwrittenFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 38.sp,
+        lineHeight = 44.sp
+    ),
+    displaySmall = TextStyle(
+        fontFamily = HandwrittenFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 32.sp,
+        lineHeight = 38.sp
+    ),
+    headlineLarge = HeadlineLarge,
+    headlineMedium = TextStyle(
+        fontFamily = HandwrittenFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 28.sp,
+        lineHeight = 32.sp
+    ),
+    headlineSmall = TextStyle(
+        fontFamily = HandwrittenFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 24.sp,
+        lineHeight = 28.sp
+    ),
+    titleLarge = TextStyle(
+        fontFamily = HandwrittenFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 24.sp,
+        lineHeight = 28.sp
+    ),
+    titleMedium = TitleMedium,
+    titleSmall = TextStyle(
+        fontFamily = HandwrittenFamily,
+        fontWeight = FontWeight.Medium,
+        fontSize = 17.sp,
+        lineHeight = 21.sp
+    ),
     bodyLarge = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp
-    )
-    /* Other default text styles to override
-    titleLarge = TextStyle(
+    ),
+    bodyMedium = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
+        fontSize = 14.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.25.sp
+    ),
+    bodySmall = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.4.sp
+    ),
+    labelLarge = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Medium,
+        fontSize = 14.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.1.sp
+    ),
+    labelMedium = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Medium,
+        fontSize = 12.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.5.sp
     ),
     labelSmall = TextStyle(
         fontFamily = FontFamily.Default,
@@ -30,5 +140,4 @@ val Typography = Typography(
         lineHeight = 16.sp,
         letterSpacing = 0.5.sp
     )
-    */
 )

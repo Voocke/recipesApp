@@ -3,6 +3,7 @@ package com.example.recipes.data.local.dao
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.recipes.data.local.entities.RecipeTagCross
 import com.example.recipes.data.local.entities.Tag
@@ -11,21 +12,17 @@ import com.example.recipes.data.local.entities.Tag
 interface TagDao {
 
     @Query("SELECT * FROM tags")
-    suspend fun getAll() : List<Tag>
+    suspend fun getAll(): List<Tag>
 
-    @Insert
-    suspend fun insertTag(tag: Tag)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertTag(tag: Tag): Long
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertRecipeTag(crossRef: RecipeTagCross)
-
 
     @Delete
     suspend fun deleteTag(vararg tag: Tag)
 
     @Delete
     suspend fun deleteRecipeTag(crossRef: RecipeTagCross)
-
-
-
 }

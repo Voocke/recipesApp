@@ -16,6 +16,6 @@
 # debugging stack traces.
 #-keepattributes SourceFile,LineNumberTable
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Keep Room and entities
+-keep class com.example.recipes.data.local.** { *; }
+-keep class com.example.recipes.presentation.**UiState { *; }

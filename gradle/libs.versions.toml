@@ -11,12 +11,17 @@ composeBom = "2025.02.00"
 room = "2.6.1"
 sqlite = "2.6.2"
 ksp = "2.1.0-1.0.29"
-hilt = "2.52"
+hilt = "2.55"
 hiltNavigationCompose = "1.2.0"
+coil = "2.7.0"
+navigationCompose = "2.8.7"
+coroutines = "1.8.1"
+profileinstaller = "1.4.1"
 
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-profileinstaller = { module = "androidx.profileinstaller:profileinstaller", version.ref = "profileinstaller" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -39,6 +44,10 @@ daggerhilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigati
 
 
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+androidx-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 
 
 
