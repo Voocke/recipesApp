@@ -33,11 +33,13 @@ sealed class Screen(val route: String) {
 /**
  * Main application navigation graph hosting Home, Add Recipe, and Recipe Detail screens.
  */
+
 @Composable
 fun AppNavigation(
     modifier: Modifier = Modifier,
-    navController: NavHostController = rememberNavController()
+    navController: NavHostController = rememberNavController(),
 ) {
+
     NavHost(
         navController = navController,
         startDestination = Screen.Home.route,
@@ -60,7 +62,9 @@ fun AppNavigation(
         composable(route = Screen.Settings.route) {
             SettingsScreen(
                 onNavigateBack = {
-                    navController.popBackStack()
+
+                    if (navController.currentDestination?.route != Screen.Home.route)
+                        navController.popBackStack()
                 }
             )
         }
@@ -68,7 +72,9 @@ fun AppNavigation(
         composable(route = Screen.AddRecipe.route) {
             AddRecipeScreen(
                 onNavigateBack = {
-                    navController.popBackStack()
+
+                    if (navController.currentDestination?.route != Screen.Home.route)
+                        navController.popBackStack()
                 }
             )
         }
@@ -85,7 +91,8 @@ fun AppNavigation(
             AddRecipeScreen(
                 recipeId = recipeId,
                 onNavigateBack = {
-                    navController.popBackStack()
+                    if (navController.currentDestination?.route != Screen.Home.route)
+                        navController.popBackStack()
                 },
                 onRecipeDeleted = {
                     navController.popBackStack(Screen.Home.route, inclusive = false)
@@ -105,7 +112,8 @@ fun AppNavigation(
             RecipeDetailScreen(
                 recipeId = recipeId,
                 onNavigateBack = {
-                    navController.popBackStack()
+                    if (navController.currentDestination?.route != Screen.Home.route)
+                        navController.popBackStack()
                 },
                 onEditRecipe = {
                     navController.navigate(Screen.EditRecipe.createRoute(recipeId))
